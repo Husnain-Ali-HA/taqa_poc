@@ -1,0 +1,13 @@
+
+msal
+requests
+python-dotenv
+
+
+msgraph-core 
+azure-identity 
+azure-ai-agents 
+azure-ai-projects
+pandas
+odfpy
+python-pptx
