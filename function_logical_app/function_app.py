@@ -7,9 +7,9 @@ from dotenv import load_dotenv
 from docx import Document
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
-from azure.ai.formrecognizer import DocumentAnalysisClient ,  AnalysisFeature
+from azure.ai.formrecognizer import DocumentAnalysisClient, AnalysisFeature
 from azure.core.credentials import AzureKeyCredential
-
+from azure.ai.documentintelligence.models import ContentFormat
 
 load_dotenv(override=False)
 ENDPOINT = os.getenv("AZURE_DOC_INTEL_ENDPOINT")
@@ -21,41 +21,33 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 docintel_client = DocumentAnalysisClient(ENDPOINT, AzureKeyCredential(KEY))
 
 
-def _docx_bytes_to_text(doc_bytes: bytes) -> str:
-    doc = Document(io.BytesIO(doc_bytes))
-    paras: List[str] = [p.text.strip() for p in doc.paragraphs if p.text.strip()]
-    return "\n".join(paras)
-
-
-def _make_pdf_bytes(text: str) -> bytes:
-    buf = io.BytesIO()
-    c = canvas.Canvas(buf, pagesize=letter)
-    width, height = letter
-    x_margin, y_margin = 72, 72
-    y = height - y_margin
-    c.setFont("Times-Roman", 11)
-
-    for para in text.splitlines():
-        for line in textwrap.wrap(para, 90) or [""]:
-            if y < y_margin:
-                c.showPage()
-                c.setFont("Times-Roman", 11)
-                y = height - y_margin
-            c.drawString(x_margin, y, line)
-            y -= 14
-        y -= 14
-    c.save()
-    pdf_bytes = buf.getvalue()
-    buf.close()
-    return pdf_bytes
 
 
 def _read_with_docintel(pdf_bytes: bytes) -> str:
     poller = docintel_client.begin_analyze_document(
-        model_id="prebuilt-layout", document=pdf_bytes, features=[  AnalysisFeature.OCR_HIGH_RESOLUTION],
+        model_id="prebuilt-layout",
+        # model_id="prebuilt-read",
+        document=pdf_bytes,
+        # features=[AnalysisFeature.OCR_HIGH_RESOLUTION],
+        output_content_format=ContentFormat.MARKDOWN
+  
     )
     result = poller.result()
-    return "\n".join(line.content for pg in result.pages for line in pg.lines)
+    return result.to_dict()
+    # return "\n".join(line.content for pg in result.pages for line in pg.lines)
+
+    parts = []
+
+    # normal lines
+    parts.extend(line.content for pg in result.pages for line in pg.lines)
+
+    # table cells
+    for table in result.tables:
+        for cell in table.cells:
+            if cell.content:
+                parts.append(cell.content)
+
+    return "\n".join(parts)
     # return result
 
 
@@ -64,20 +56,15 @@ def _read_with_docintel(pdf_bytes: bytes) -> str:
 def convert_docx_to_text(req: func.HttpRequest) -> func.HttpResponse:
     try:
         body = req.get_json()
-        b64_docx = body.get("content")
-        if not b64_docx:
-            return func.HttpResponse(
-                "'content' (Base-64 DOCX) is required.", status_code=400
-            )
+        b64_pdf = body.get("content")
 
-        if "," in b64_docx:
-            b64_docx = b64_docx.split(",", 1)[1]
+        pdf_bytes = base64.b64decode(b64_pdf)
 
-        doc_bytes = base64.b64decode(b64_docx)
-
-        plain_text = _docx_bytes_to_text(doc_bytes)
-
-        pdf_bytes = _make_pdf_bytes(plain_text)
+        
+        target_dir = os.getcwd()                     
+        pdf_path = os.path.join(target_dir, "input.pdf")
+        with open(pdf_path, "wb") as fh:
+            fh.write(pdf_bytes)
 
         extracted = _read_with_docintel(pdf_bytes)
         response = {
@@ -91,3 +78,4 @@ def convert_docx_to_text(req: func.HttpRequest) -> func.HttpResponse:
 
     except Exception as exc:
         return func.HttpResponse(f"Server error: {exc}", status_code=500)
+

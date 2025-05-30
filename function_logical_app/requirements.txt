@@ -6,4 +6,4 @@ azure-functions
 python-dotenv          # load .env during local dev
 python-docx            # read DOCX
 reportlab              # render PDF in-memory
-azure-ai-formrecognizer   # stable v3 “Document Intelligence” SDK
+azure-ai-formrecognizer==3.3.2
