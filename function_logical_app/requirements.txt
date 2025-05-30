@@ -3,16 +3,5 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
-azure-identity
-python-dotenv
-requests
-azure-ai-formrecognizer
-azure-functions
-msal
-python-dotenv
-requests
-azure-ai-formrecognizer
-azure-functions
-python-dotenv
-office365-rest-python-client
-azure-ai-formrecognizer
+docx
+python-docx
