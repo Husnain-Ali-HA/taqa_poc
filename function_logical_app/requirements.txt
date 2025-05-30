@@ -3,5 +3,7 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
-docx
-python-docx
+python-dotenv          # load .env during local dev
+python-docx            # read DOCX
+reportlab              # render PDF in-memory
+azure-ai-formrecognizer   # stable v3 “Document Intelligence” SDK
