@@ -1,0 +1,156 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "triggers": {
+            "When_a_HTTP_request_is_received": {
+                "type": "Request",
+                "kind": "Http",
+                "inputs": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "HTTP_URI": {
+                                "description": "URI for HTTP Request",
+                                "type": "string"
+                            },
+                            "HTTP_request_content": {
+                                "description": "Content or Body of the HTTP Request",
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "description": "In This logic app we extract data from a word file located at share-point"
+            }
+        },
+        "actions": {
+            "Get-file-content": {
+                "runAfter": {},
+                "metadata": {
+                    "%252fSiteAssets%252fMy_Files%252fProject%2b1%252fWeek%2b1%252fExcutive%2bdata%2breporting.docx": "/SiteAssets/My_Files/Project 1/Week 1/Excutive data reporting.docx",
+                    "%252fSiteAssets%252fMy_Files%252fProject%2b1%252fWeek%2b1%252fExcutive%2bdata%2breporting.pdf": "/SiteAssets/My_Files/Project 1/Week 1/Excutive data reporting.pdf"
+                },
+                "type": "ApiConnection",
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['sharepointonline']['connectionId']"
+                        }
+                    },
+                    "method": "get",
+                    "path": "/datasets/@{encodeURIComponent(encodeURIComponent('https://digifloat.sharepoint.com/sites/Taqa-electric-grid'))}/files/@{encodeURIComponent('%252fSiteAssets%252fMy_Files%252fProject%2b1%252fWeek%2b1%252fExcutive%2bdata%2breporting.docx')}/content",
+                    "queries": {
+                        "inferContentType": false
+                    }
+                }
+            },
+            "Convert_Word_Document_to_PDF": {
+                "runAfter": {
+                    "Get-file-content": [
+                        "Succeeded"
+                    ]
+                },
+                "metadata": {
+                    "01EZ3YRJYAUPMVPXCW4ZG3FUVWG36LK5AI": "/My_Files/Project 1/Week 1/Excutive data reporting.docx"
+                },
+                "type": "ApiConnection",
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['wordonlinebusiness']['connectionId']"
+                        }
+                    },
+                    "method": "get",
+                    "path": "/api/templates/convertFile",
+                    "queries": {
+                        "source": "sites/digifloat.sharepoint.com,fccb36e5-a290-498e-be3e-545dc563554a,138177f5-8e4e-48b1-84c3-924a2a566a4f",
+                        "drive": "b!5TbL_JCijkm-PlRdxWNVSvV3gRNOjrFIhMOSSipWak_3RteC31t7SobeaqM2rCnC",
+                        "file": "01EZ3YRJYAUPMVPXCW4ZG3FUVWG36LK5AI",
+                        "format": "pdf"
+                    }
+                }
+            },
+            "analyse-document": {
+                "runAfter": {
+                    "Compose": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "ApiConnection",
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['formrecognizer']['connectionId']"
+                        }
+                    },
+                    "method": "post",
+                    "body": "@outputs('Compose')",
+                    "path": "/connectorinternaldocumentintelligence/documentModels/@{encodeURIComponent('prebuilt-layout')}:analyze",
+                    "queries": {
+                        "api-version": "2024-11-30",
+                        "outputContentFormat": "markdown"
+                    }
+                }
+            },
+            "Compose": {
+                "runAfter": {
+                    "Convert_Word_Document_to_PDF": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Compose",
+                "inputs": "@base64ToBinary(body('Convert_Word_Document_to_PDF')?['$content'])"
+            },
+            "Response": {
+                "runAfter": {
+                    "analyse-document": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Response",
+                "kind": "Http",
+                "inputs": {
+                    "statusCode": 200,
+                    "body": "@body('analyse-document')?['analyzeResult']?['content']\n"
+                }
+            }
+        },
+        "outputs": {},
+        "parameters": {
+            "Method_": {
+                "defaultValue": "",
+                "type": "String"
+            },
+            "$connections": {
+                "type": "Object",
+                "defaultValue": {}
+            }
+        }
+    },
+    "parameters": {
+        "Method_": {
+            "value": "GET"
+        },
+        "$connections": {
+            "type": "Object",
+            "value": {
+                "sharepointonline": {
+                    "id": "/subscriptions/280bb2da-1912-419b-a6dc-018980d979b9/providers/Microsoft.Web/locations/eastus2/managedApis/sharepointonline",
+                    "connectionId": "/subscriptions/280bb2da-1912-419b-a6dc-018980d979b9/resourceGroups/POC_TAQA/providers/Microsoft.Web/connections/sharepointonline-2",
+                    "connectionName": "sharepointonline-2"
+                },
+                "wordonlinebusiness": {
+                    "id": "/subscriptions/280bb2da-1912-419b-a6dc-018980d979b9/providers/Microsoft.Web/locations/eastus2/managedApis/wordonlinebusiness",
+                    "connectionId": "/subscriptions/280bb2da-1912-419b-a6dc-018980d979b9/resourceGroups/POC_TAQA/providers/Microsoft.Web/connections/wordonlinebusiness",
+                    "connectionName": "wordonlinebusiness"
+                },
+                "formrecognizer": {
+                    "id": "/subscriptions/280bb2da-1912-419b-a6dc-018980d979b9/providers/Microsoft.Web/locations/eastus2/managedApis/formrecognizer",
+                    "connectionId": "/subscriptions/280bb2da-1912-419b-a6dc-018980d979b9/resourceGroups/POC_TAQA/providers/Microsoft.Web/connections/formrecognizer",
+                    "connectionName": "formrecognizer"
+                }
+            }
+        }
+    }
+}
