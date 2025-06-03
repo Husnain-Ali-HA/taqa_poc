@@ -197,86 +197,456 @@ def prcoess_excel_file(req: func.HttpRequest) -> func.HttpResponse:
 
 
 
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.dml.color import RGBColor
+
+
+
+
+
+
+import base64
+import json
+import io
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.dml.color import RGBColor
+import uuid
 import base64
 import json
 import io
 from pptx import Presentation
 import uuid
+from datetime import datetime
+import base64
+import json
+import io
+from pptx import Presentation
+import uuid
+from datetime import datetime
+from pptx.util import Pt
+import base64
+import json
+import io
+from pptx import Presentation
+import uuid
+from datetime import datetime
+from pptx.util import Pt
+from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
+import base64
+import json
+import io
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
+import uuid
+from datetime import datetime
 
-@app.route(route="prcoess_power_point_file")
-@app.function_name(name="prcoess_power_point_file")
-def prcoess_power_point_file(req: func.HttpRequest) -> func.HttpResponse:
+import base64
+import json
+import io
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
+import uuid
+from datetime import datetime
+
+import base64
+import json
+import io
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
+from datetime import datetime
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
+import base64, io, json
+from datetime import datetime
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
+import base64, io
+from datetime import datetime
+import base64
+import json
+import io
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.dml.color import RGBColor
+from datetime import datetime
+
+import base64
+import json
+import io
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.dml.color import RGBColor
+from datetime import datetime
+from datetime import datetime as dt
+import io
+import base64
+import json
+from datetime import datetime as dt, datetime
+from pptx import Presentation
+import azure.functions as func
+
+from pptx.dml.color import RGBColor
+from pptx.util import Pt
+
+from pptx.dml.color import RGBColor
+from pptx.util import Pt
+
+# def update_procurement_table(table, date_lists):
+#     # Only these columns are editable (Expected / Actual)
+#     expected_actual_cols = [2,4,6,8,10,12]
+
+#     for row_offset in range(5):  # 5 rows of data (skip 2 header rows)
+#         row = table.rows[row_offset + 2]
+#         for i in range(6):  # Loop through each system
+#             try:
+#                 new_date = date_lists[i][row_offset]
+#                 col_idx = expected_actual_cols[i]  # Only Expected / Actual columns
+#                 cell = row.cells[col_idx]
+
+#                 # Clear previous text
+#                 cell.text = ""
+
+#                 # Add new text with formatting
+#                 paragraph = cell.text_frame.paragraphs[0]
+#                 run = paragraph.add_run()
+#                 run.text = new_date
+
+#                 # Set desired font and color
+#                 font = run.font
+#                 font.name = 'Arial'
+#                 font.size = Pt(11)
+
+#                 # Example: Make all inserted dates red
+#                 font.color.rgb = RGBColor(255, 0, 0)  # RED
+
+#             except IndexError:
+#                 print(f"Missing value at date_lists[{i}][{row_offset}]")
+#             except Exception as e:
+#                 print(f"Error updating cell at row {row_offset+2}, col {col_idx}: {e}")
+
+# from pptx.dml.color import RGBColor
+# from pptx.util import Pt
+# from datetime import datetime
+
+# def parse_date(date_str):
+#     """Parses DD.MM.YYYY string to datetime.date"""
+#     try:
+#         return datetime.strptime(date_str, "%d.%m.%Y").date()
+#     except:
+#         return None
+
+# def update_procurement_table(table, date_lists):
+#     expected_actual_cols = [2,4,6,8,10,12]
+#     plan_cols = [1,3,5,7,9,11]
+
+#     for row_offset in range(5):  # 5 rows of data (skip 2 header rows)
+#         row = table.rows[row_offset + 2]
+#         for i in range(6):  # 6 systems
+#             try:
+#                 col_idx = expected_actual_cols[i]
+#                 plan_idx = plan_cols[i]
+
+#                 actual_date_str = date_lists[i][row_offset]
+#                 actual_date = parse_date(actual_date_str)
+
+#                 plan_cell = row.cells[plan_idx]
+#                 plan_date = parse_date(plan_cell.text.strip())
+
+#                 cell = row.cells[col_idx]
+#                 cell.text = ""
+
+#                 paragraph = cell.text_frame.paragraphs[0]
+#                 run = paragraph.add_run()
+#                 run.text = actual_date_str
+
+#                 font = run.font
+#                 font.name = 'Arial'
+#                 font.size = Pt(11)
+
+#                 # Set color based on comparison
+#                 if actual_date and plan_date:
+#                     if actual_date < plan_date:
+#                         font.color.rgb = RGBColor(0, 128, 0)  # Green
+#                     elif actual_date == plan_date:
+#                         font.color.rgb = RGBColor(0, 0, 255)  # Blue
+#                     else:
+#                         font.color.rgb = RGBColor(255, 0, 0)  # Red
+#                 else:
+#                     font.color.rgb = RGBColor(0, 0, 0)  # Black if dates invalid
+
+#             except Exception as e:
+#                 print(f"Error at row {row_offset+2}, col {col_idx}: {e}")
+# from datetime import datetime
+# from pptx.util import Pt
+# from pptx.dml.color import RGBColor
+
+# def parse_date(date_str):
+#     """Parses DD.MM.YYYY string to datetime.date"""
+#     try:
+#         return datetime.strptime(date_str.strip(), "%d.%m.%Y").date()
+#     except:
+#         return None
+
+# def update_procurement_table(table, date_lists):
+#     expected_actual_cols = [2, 4, 6, 8, 10, 12]
+#     plan_cols = [1, 3, 5, 7, 9, 11]
+
+#     for row_offset in range(5):
+#         row = table.rows[row_offset + 2]
+#         for i in range(6): 
+#             try:
+#                 col_idx = expected_actual_cols[i]
+#                 plan_idx = plan_cols[i]
+
+#                 actual_date_str = date_lists[i][row_offset].strip()
+#                 actual_date = parse_date(actual_date_str)
+
+#                 plan_text = row.cells[plan_idx].text.strip()
+#                 plan_date = parse_date(plan_text)
+
+#                 cell = row.cells[col_idx]
+#                 cell.text = ""
+
+#                 paragraph = cell.text_frame.paragraphs[0]
+#                 run = paragraph.add_run()
+#                 run.text = actual_date_str
+
+#                 font = run.font
+#                 font.name = 'Arial'
+#                 font.size = Pt(11)
+
+#                 # Only assign color if both are real dates
+#                 if actual_date and plan_date:
+#                     if actual_date < plan_date:
+#                         font.color.rgb = RGBColor(0, 128, 0)  # Green
+#                     elif actual_date == plan_date:
+#                         font.color.rgb = RGBColor(0, 0, 255)  # Blue
+#                     else:
+#                         font.color.rgb = RGBColor(255, 0, 0)  # Red
+#                 else:
+#                     font.color.rgb = RGBColor(0, 0, 0)  # Black (default)
+
+#             except Exception as e:
+#                 print(f"Error at row {row_offset + 2}, col {col_idx}: {e}")
+
+# def update_slide_content(slide, date_lists):
+#     for shape in slide.shapes:
+#         if shape.has_table:
+#             update_procurement_table(shape.table, date_lists)
+
+# def process_presentation_base64(content_b64, date_lists):
+#     ppt_bytes = base64.b64decode(content_b64)
+#     prs = Presentation(io.BytesIO(ppt_bytes))
+    
+#     if len(prs.slides) > 2:
+#         update_slide_content(prs.slides[2], date_lists)
+    
+#     output = io.BytesIO()
+#     prs.save(output)
+#     output.seek(0)
+    
+#     filename = f"updated_slide3_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pptx"
+#     with open(filename, "wb") as f:
+#         f.write(output.getvalue())
+    
+#     return {
+#         "status": "success",
+#         "filename": filename,
+#         "content_b64": base64.b64encode(output.getvalue()).decode("utf-8")
+#     }
+
+# @app.route(route="update_powerpoint")
+# @app.function_name(name="update_powerpoint")
+# def update_powerpoint(req: func.HttpRequest) -> func.HttpResponse:
+#     try:
+#         req_body = req.get_json()
+#         content_b64 = req_body.get("content")
+
+#         date_lists = req_body.get("date_lists", [
+#             ["17.11.2023", "14.10.2024", "08.04.2025", "24.06.2025", "15.09.2025"],  # 132kV GIS
+#             ["31.01.2024", "06.06.2024", "15.11.2024", "30.06.2025", "15.09.2025"],  # 33kV GIS
+#             ["15.12.2023", "25.06.2024", "20.11.2024", "15.04.2025", "03.07.2025"],  # Power Transformer
+#             ["24.05.2024", "07.04.2025", "07.06.2025", "26.06.2025", "30.09.2025"],  # 132kV SCMS
+#             ["24.05.2024", "20.01.2025", "11.03.2025", "02.06.2025", "16.06.2025"],  # 110V DC
+#             ["15.04.2024", "14.04.2025", "30.04.2025", "27.05.2025", "07.02.2025"]   # Protection
+#         ])
+#         if len(date_lists) != 6 or any(len(sublist) != 5 for sublist in date_lists):
+#             raise ValueError("date_lists must contain 6 lists with 5 dates each")
+
+#         result = process_presentation_base64(content_b64, date_lists)
+
+#         return func.HttpResponse(
+#             json.dumps({
+#                 "status": "success",
+#                 "filename": result["filename"],
+#                 "updates_applied": {"date_lists": date_lists}
+#             }),
+#             status_code=200,
+#             mimetype="application/json"
+#         )
+
+#     except Exception as e:
+#         return func.HttpResponse(
+#             json.dumps({
+#                 "status": "error",
+#                 "message": str(e),
+#                 "solution": "Ensure date_lists is shaped as 6x5 matrix and contains only date strings"
+#             }),
+#             status_code=500,
+#             mimetype="application/json"
+#         )
+import base64
+import io
+import json
+from datetime import datetime
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.dml.color import RGBColor
+import azure.functions as func
+
+def parse_date(date_str):
+    try:
+        return datetime.strptime(date_str.strip(), "%d.%m.%Y").date()
+    except:
+        return None
+
+def update_slide2_table(table, expected_value, awarded_value):
+    for row in table.rows:
+        if len(row.cells) < 2:
+            continue
+
+        label = row.cells[0].text.strip().lower()
+
+        if "awarded value" in label:
+            row.cells[1].text = awarded_value
+            for paragraph in row.cells[1].text_frame.paragraphs:
+                for run in paragraph.runs:
+                    run.font.name = "Arial"
+                    run.font.size = Pt(12)
+
+        elif "expected completion date" in label:
+            row.cells[1].text = expected_value
+            for paragraph in row.cells[1].text_frame.paragraphs:
+                for run in paragraph.runs:
+                    run.font.name = "Arial"
+                    run.font.size = Pt(12)
+
+
+def update_slide3_table(table, date_lists):
+    expected_actual_cols = [2, 4, 6, 8, 10, 12]
+    plan_cols = [1, 3, 5, 7, 9, 11]
+
+    for row_offset in range(5):
+        row = table.rows[row_offset + 2]
+        for i in range(6):
+            col_idx = expected_actual_cols[i]
+            plan_idx = plan_cols[i]
+
+            actual_date_str = date_lists[i][row_offset].strip()
+            actual_date = parse_date(actual_date_str)
+            plan_text = row.cells[plan_idx].text.strip()
+            plan_date = parse_date(plan_text)
+
+            cell = row.cells[col_idx]
+            cell.text = ""
+            paragraph = cell.text_frame.paragraphs[0]
+            run = paragraph.add_run()
+            run.text = actual_date_str
+
+            font = run.font
+            font.name = 'Arial'
+            font.size = Pt(11)
+
+            if actual_date and plan_date:
+                if actual_date < plan_date:
+                    font.color.rgb = RGBColor(0, 128, 0)  # Green
+                elif actual_date == plan_date:
+                    font.color.rgb = RGBColor(0, 0, 255)  # Blue
+                else:
+                    font.color.rgb = RGBColor(255, 0, 0)  # Red
+            else:
+                font.color.rgb = RGBColor(0, 0, 0)
+
+def process_presentation_base64(content_b64, expected_value, awarded_value, date_lists):
+    ppt_bytes = base64.b64decode(content_b64)
+    prs = Presentation(io.BytesIO(ppt_bytes))
+
+    if len(prs.slides) > 2:
+        # Slide 2 updates
+        slide2 = prs.slides[1]
+        for shape in slide2.shapes:
+            if shape.has_table:
+                update_slide2_table(shape.table, expected_value, awarded_value)
+
+        # Slide 3 updates
+        slide3 = prs.slides[2]
+        for shape in slide3.shapes:
+            if shape.has_table:
+                update_slide3_table(shape.table, date_lists)
+
+    output = io.BytesIO()
+    prs.save(output)
+    output.seek(0)
+
+    filename = f"updated_ppt_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pptx"
+    with open(filename, "wb") as f:
+        f.write(output.getvalue())
+
+    return {
+        "status": "success",
+        "filename": filename,
+        "content_b64": base64.b64encode(output.getvalue()).decode("utf-8")
+    }
+
+@app.route(route="update_powerpoint")
+@app.function_name(name="update_powerpoint")
+def update_powerpoint(req: func.HttpRequest) -> func.HttpResponse:
     try:
         req_body = req.get_json()
         content_b64 = req_body.get("content")
-        new_value = "AED 350,000"
-        
-        # Decode the PowerPoint file
-        ppt_bytes = base64.b64decode(content_b64)
-        
-        # Load the presentation
-        prs = Presentation(io.BytesIO(ppt_bytes))
-        
-        # Process slide 2 (index 1)
-        if len(prs.slides) >= 2:
-            slide = prs.slides[1]
-            
-            # Search through all shapes
-            for shape in slide.shapes:
-                # Check if shape is a table
-                if shape.has_table:
-                    table = shape.table
-                    for row in table.rows:
-                        for i, cell in enumerate(row.cells):
-                            if "Awarded value:" in cell.text:
-                                # Found the label cell, next cell should contain the value
-                                if i + 1 < len(row.cells):
-                                    # Clear existing text and add new value
-                                    next_cell = row.cells[i+1]
-                                    next_cell.text = new_value
-                                    # Preserve formatting by keeping at least one run
-                                    if not next_cell.text_frame.paragraphs[0].runs:
-                                        next_cell.text_frame.paragraphs[0].add_run()
-                                    break
-                
-                # Check text frames if not found in tables
-                elif shape.has_text_frame:
-                    for paragraph in shape.text_frame.paragraphs:
-                        if "Awarded value:" in paragraph.text:
-                            # Replace just the value portion if possible
-                            if "AED" in paragraph.text:
-                                paragraph.text = paragraph.text.replace("AED 220,500,000.00", new_value)
-                            else:
-                                paragraph.text = f"Awarded value: {new_value}"
-                            break
-        
-        # Save modified presentation
-        modified_ppt = io.BytesIO()
-        prs.save(modified_ppt)
-        modified_ppt.seek(0)
-        
-        # Save locally for debugging
-        debug_filename = f"modified_{uuid.uuid4().hex[:6]}.pptx"
-        with open(debug_filename, "wb") as f:
-            f.write(modified_ppt.getvalue())
-        
-        # Return modified file
+
+        expected_value = req_body.get("expected_value", "AED 23000")
+        awarded_value = req_body.get("awarded_value", "AED 23000")
+
+        date_lists = req_body.get("date_lists", [
+            ["17.11.2023", "14.10.2024", "08.04.2025", "24.06.2025", "15.09.2025"],
+            ["31.01.2024", "06.06.2024", "15.11.2024", "30.06.2025", "15.09.2025"],
+            ["15.12.2023", "25.06.2024", "20.11.2024", "15.04.2025", "03.07.2025"],
+            ["24.05.2024", "07.04.2025", "07.06.2025", "26.06.2025", "30.09.2025"],
+            ["24.05.2024", "20.01.2025", "11.03.2025", "02.06.2025", "16.06.2025"],
+            ["15.04.2024", "14.04.2025", "30.04.2025", "27.05.2025", "07.02.2025"]
+        ])
+        if len(date_lists) != 6 or any(len(sublist) != 5 for sublist in date_lists):
+            raise ValueError("date_lists must contain 6 lists with 5 dates each")
+
+        result = process_presentation_base64(content_b64, expected_value, awarded_value, date_lists)
+
         return func.HttpResponse(
             json.dumps({
-                "content": base64.b64encode(modified_ppt.getvalue()).decode('utf-8'),
-                "debug_file": debug_filename,
-                "message": "PowerPoint updated successfully"
-            }), 
-            status_code=200, 
+                "status": "success",
+                "filename": result["filename"],
+                "updates_applied": {
+                    "expected_value": expected_value,
+                    "awarded_value": awarded_value,
+                    "date_lists": date_lists
+                }
+            }),
+            status_code=200,
             mimetype="application/json"
         )
-    
+
     except Exception as e:
         return func.HttpResponse(
             json.dumps({
-                "error": str(e),
-                "details": "Failed to update PowerPoint value",
-                "solution": "Please ensure the slide contains either a table with 'Awarded value:' or text frame with this label"
+                "status": "error",
+                "message": str(e)
             }),
             status_code=500,
             mimetype="application/json"
