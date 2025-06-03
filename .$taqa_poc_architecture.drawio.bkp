@@ -1,0 +1,468 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.5 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.5" pages="2">
+  <diagram name="Page-1" id="d-wcuALR_x7S16BtG-h-">
+    <mxGraphModel dx="1826" dy="995" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1920" pageHeight="1200" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-1" value="Excel Processing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">
+          <mxGeometry x="241" y="226" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-6" target="cgC_bqsBWjtkFzZ0RYMl-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-6" target="cgC_bqsBWjtkFzZ0RYMl-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-6" target="cgC_bqsBWjtkFzZ0RYMl-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-6" value="Main Workflow" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" parent="1" vertex="1">
+          <mxGeometry x="-23" y="372" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-7" target="cgC_bqsBWjtkFzZ0RYMl-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-7" value="Email Triggering&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">
+          <mxGeometry x="225" y="645" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-8" target="cgC_bqsBWjtkFzZ0RYMl-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-8" target="cgC_bqsBWjtkFzZ0RYMl-49" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1123" y="442" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-8" value="Word File Processing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">
+          <mxGeometry x="1033" y="293.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-9" value="PPT Processing&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">
+          <mxGeometry x="234" y="382" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-17" value="Workflow That Trigger the agents when files are creted&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-151" y="367" width="134" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-18" value="The agnets that do specifc work by the helping of logic app tools These agents are located in Azure Foundry&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="190" y="151" width="235" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-21" target="cgC_bqsBWjtkFzZ0RYMl-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-21" value="Process-excel" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="490" y="219" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-22" target="cgC_bqsBWjtkFzZ0RYMl-74" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-22" value="Process-PPTX" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="466" y="374" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-23" value="Send-Email" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="414" y="647" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-24" value="Outlook" style="rhombus;whiteSpace=wrap;html=1;fillColor=light-dark(#B3E2C9, #5d836f);strokeColor=#56517e;" parent="1" vertex="1">
+          <mxGeometry x="710" y="765" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-25" value="Logic App triggered each time when agents are called and process files according to it&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="440" y="303" width="224" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.067;entryY=0.617;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-9" target="cgC_bqsBWjtkFzZ0RYMl-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.092;entryY=0.617;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-1" target="cgC_bqsBWjtkFzZ0RYMl-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-30" target="cgC_bqsBWjtkFzZ0RYMl-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-30" value="SharePoint" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=light-dark(#000000,#024550);fillStyle=solid;" parent="1" vertex="1">
+          <mxGeometry x="425" y="765" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-32" value="Check Wheter&amp;nbsp; Project is exist against that pm in Project Structure if not then send Email" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="375" y="868" width="207" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-34" target="cgC_bqsBWjtkFzZ0RYMl-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-34" target="cgC_bqsBWjtkFzZ0RYMl-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-34" value="Function App Append data into excel" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#a0522d;strokeColor=#6D1F00;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="732" y="219" width="141" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="868" y="445" as="targetPoint" />
+            <mxPoint x="948" y="445" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-35" value="Function App Write Data into PPTX" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#a0522d;strokeColor=#6D1F00;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="716" y="420" width="151" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-40" value="SharePoint" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=light-dark(#000000,#024550);fillStyle=solid;" parent="1" vertex="1">
+          <mxGeometry x="517" y="4" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.413;entryY=0.975;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-21" target="cgC_bqsBWjtkFzZ0RYMl-40" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-42" value="Upload Updated file into Sharepoint&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="558" y="92" width="163" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-45" value="Return Specific data in JSON for inserting into Excel&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="867" y="286" width="163" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-46" value="Calling Agent for specifc data like Progreess Sheet or Capex" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="873" y="211" width="198" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-49" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1396" y="131" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-55" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-49" target="cgC_bqsBWjtkFzZ0RYMl-54" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-49" target="cgC_bqsBWjtkFzZ0RYMl-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-49" value="Process-Word" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1336" y="293.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-50" value="SharePoint" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=light-dark(#000000,#024550);fillStyle=solid;" parent="1" vertex="1">
+          <mxGeometry x="1356" y="50" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-52" value="Get word FIle&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1399" y="153" width="92" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-54" target="cgC_bqsBWjtkFzZ0RYMl-49" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-54" value="Ai Document Intellgience&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;" parent="1" vertex="1">
+          <mxGeometry x="1578" y="293.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-58" value="Send Word File&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1456" y="274" width="117" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-59" value="Return Content of File" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1449" y="349" width="131" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-64" value="Agent Just Calling Tool" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1158" y="276" width="198" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-65" value="Tool Returning Word File Data&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1158" y="346.5" width="198" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.106;entryY=0.109;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-22" target="cgC_bqsBWjtkFzZ0RYMl-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.667;entryY=1.017;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-35" target="cgC_bqsBWjtkFzZ0RYMl-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-69" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1222" y="438" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-69" value="Procurement Status" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=light-dark(#ffcccc, #484242);strokeColor=#36393d;size=0.325;" parent="1" vertex="1">
+          <mxGeometry x="1329" y="596" width="120" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-70" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1165" y="442" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-70" value="Major Project Highlightd and Concerns" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=light-dark(#ffcccc, #484242);strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="1186" y="601" width="120" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-71" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1084" y="439" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-71" value="Background" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=light-dark(#ffcccc, #484242);strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="1024" y="604" width="120" height="57" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-72" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1024" y="438" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-72" value="Project Schedule and Update&amp;nbsp;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=light-dark(#ffcccc, #484242);strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="865" y="604" width="120" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-73" value="This is one Function App these are considered as Seperate Endpoints" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="705" y="157" width="187" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-74" value="SharePoint" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=light-dark(#000000,#024550);fillStyle=solid;" parent="1" vertex="1">
+          <mxGeometry x="472" y="545" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.613;entryY=0.013;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-23" target="cgC_bqsBWjtkFzZ0RYMl-30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-78" value="Access PPTX File" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="355" y="518" width="111" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-79" value="Write PPTX File" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="517" y="518" width="111" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-81" value="" style="shape=link;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="947" y="437" as="sourcePoint" />
+            <mxPoint x="1270" y="441" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" target="cgC_bqsBWjtkFzZ0RYMl-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1133" y="452" as="targetPoint" />
+            <mxPoint x="1065" y="437" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-87" value="These are 4 sub processes that return and get specifc data from word file&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1016" y="679" width="301" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-93" value="Write Specifc Data according to slides&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="732" y="488" width="112" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cgC_bqsBWjtkFzZ0RYMl-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.15;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="cgC_bqsBWjtkFzZ0RYMl-74" target="cgC_bqsBWjtkFzZ0RYMl-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Page-1" id="s9600fLczjwYKfVudBEr">
+    <mxGraphModel dx="1826" dy="995" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1920" pageHeight="1200" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-0" />
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-1" parent="_LhLzrTCSQHIDNuwN9rT-0" />
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-2" value="Excel Processing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="241" y="226" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-6" target="_LhLzrTCSQHIDNuwN9rT-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-6" target="_LhLzrTCSQHIDNuwN9rT-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-6" target="_LhLzrTCSQHIDNuwN9rT-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-6" value="Main Workflow" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="-23" y="372" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-8" target="_LhLzrTCSQHIDNuwN9rT-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-8" value="Email Triggering&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="225" y="645" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-12" target="_LhLzrTCSQHIDNuwN9rT-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-12" target="_LhLzrTCSQHIDNuwN9rT-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1123" y="442" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-12" value="Word File Processing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1033" y="293.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-13" value="PPT Processing&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="234" y="382" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-14" value="Workflow That Trigger the agents when files are creted&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="-151" y="367" width="134" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-15" value="The agnets that do specifc work by the helping of logic app tools These agents are located in Azure Foundry&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="190" y="151" width="235" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-17" target="_LhLzrTCSQHIDNuwN9rT-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-17" value="Process-excel" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="490" y="219" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-19" target="_LhLzrTCSQHIDNuwN9rT-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-19" value="Process-PPTX" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="466" y="374" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-20" value="Send-Email" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="414" y="647" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-21" value="Outlook" style="rhombus;whiteSpace=wrap;html=1;fillColor=light-dark(#B3E2C9, #5d836f);strokeColor=#56517e;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="710" y="765" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-22" value="Logic App triggered each time when agents are called and process files according to it&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="440" y="303" width="224" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.067;entryY=0.617;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-13" target="_LhLzrTCSQHIDNuwN9rT-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.092;entryY=0.617;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-2" target="_LhLzrTCSQHIDNuwN9rT-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-26" target="_LhLzrTCSQHIDNuwN9rT-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-26" value="SharePoint" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=light-dark(#000000,#024550);fillStyle=solid;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="425" y="765" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-27" value="Check Wheter&amp;nbsp; Project is exist against that pm in Project Structure if not then send Email" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="375" y="868" width="207" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-30" target="_LhLzrTCSQHIDNuwN9rT-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-30" target="_LhLzrTCSQHIDNuwN9rT-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-30" value="Function App Append data into excel" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#a0522d;strokeColor=#6D1F00;fontColor=#ffffff;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="732" y="219" width="141" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="868" y="445" as="targetPoint" />
+            <mxPoint x="948" y="445" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-32" value="Function App Write Data into PPTX" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#a0522d;strokeColor=#6D1F00;fontColor=#ffffff;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="716" y="420" width="151" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-33" value="SharePoint" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=light-dark(#000000,#024550);fillStyle=solid;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="517" y="4" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.413;entryY=0.975;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-17" target="_LhLzrTCSQHIDNuwN9rT-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-35" value="Upload Updated file into Sharepoint&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="558" y="92" width="163" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-36" value="Return Specific data in JSON for inserting into Excel&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="867" y="286" width="163" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-37" value="Calling Agent for specifc data like Progreess Sheet or Capex" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="873" y="211" width="198" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-41">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1396" y="131" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-39" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-41" target="_LhLzrTCSQHIDNuwN9rT-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-41" target="_LhLzrTCSQHIDNuwN9rT-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-41" value="Process-Word" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1336" y="293.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-42" value="SharePoint" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=light-dark(#000000,#024550);fillStyle=solid;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1356" y="50" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-43" value="Get word FIle&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1399" y="153" width="92" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-45" target="_LhLzrTCSQHIDNuwN9rT-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-45" value="Ai Document Intellgience&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1578" y="293.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-46" value="Send Word File&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1456" y="274" width="117" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-47" value="Return Content of File" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1449" y="349" width="131" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-48" value="Agent Just Calling Tool" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1158" y="276" width="198" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-49" value="Tool Returning Word File Data&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1158" y="346.5" width="198" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.106;entryY=0.109;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-19" target="_LhLzrTCSQHIDNuwN9rT-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.667;entryY=1.017;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-32" target="_LhLzrTCSQHIDNuwN9rT-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-53">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1222" y="438" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-53" value="Procurement Status" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=light-dark(#ffcccc, #484242);strokeColor=#36393d;size=0.325;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1329" y="596" width="120" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-55">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1165" y="442" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-55" value="Major Project Highlightd and Concerns" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=light-dark(#ffcccc, #484242);strokeColor=#36393d;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1186" y="601" width="120" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-57">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1084" y="439" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-57" value="Background" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=light-dark(#ffcccc, #484242);strokeColor=#36393d;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1024" y="604" width="120" height="57" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-59">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1024" y="438" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-59" value="Project Schedule and Update&amp;nbsp;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=light-dark(#ffcccc, #484242);strokeColor=#36393d;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="865" y="604" width="120" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-60" value="This is one Function App these are considered as Seperate Endpoints" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="705" y="157" width="187" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-61" value="SharePoint" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=light-dark(#000000,#024550);fillStyle=solid;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="472" y="545" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.613;entryY=0.013;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-20" target="_LhLzrTCSQHIDNuwN9rT-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-63" value="Access PPTX File" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="355" y="518" width="111" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-64" value="Write PPTX File" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="517" y="518" width="111" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-65" value="" style="shape=link;html=1;rounded=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="947" y="437" as="sourcePoint" />
+            <mxPoint x="1270" y="441" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" target="_LhLzrTCSQHIDNuwN9rT-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1133" y="452" as="targetPoint" />
+            <mxPoint x="1065" y="437" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-67" value="These are 4 sub processes that return and get specifc data from word file&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="1016" y="679" width="301" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-68" value="Write Specifc Data according to slides&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="_LhLzrTCSQHIDNuwN9rT-1">
+          <mxGeometry x="732" y="488" width="112" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_LhLzrTCSQHIDNuwN9rT-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.15;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="_LhLzrTCSQHIDNuwN9rT-1" source="_LhLzrTCSQHIDNuwN9rT-61" target="_LhLzrTCSQHIDNuwN9rT-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

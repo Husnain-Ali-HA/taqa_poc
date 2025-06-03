@@ -3,3 +3,5 @@ azure-functions
 python-dotenv        
 azure-identity 
 azure-ai-projects
+openpyxl
+python-pptx
