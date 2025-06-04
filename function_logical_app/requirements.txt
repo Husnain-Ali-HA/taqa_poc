@@ -5,3 +5,4 @@ azure-identity
 azure-ai-projects
 openpyxl
 python-pptx
+requests

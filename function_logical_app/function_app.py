@@ -14,9 +14,9 @@ from pptx import Presentation
 from pptx.util import Pt
 from pptx.dml.color import RGBColor
 import ast
-# Deployment : Jun 4 : 9.35 AM
+# Deployment : Jun 4 : 11:! AM
 
-
+import requests
 from openpyxl import load_workbook, Workbook
 
 load_dotenv()
@@ -145,8 +145,8 @@ def prcoess_excel_file(req: func.HttpRequest) -> func.HttpResponse:
     excel_data = base64.b64decode(new_b64)
 
     # Write the binary content to an Excel file
-    with open("output.xlsx", "wb") as f:
-        f.write(excel_data)
+    # with open("output.xlsx", "wb") as f:
+    #     f.write(excel_data)
     return func.HttpResponse(
         json.dumps({"content": new_b64}), status_code=200, mimetype="application/json"
     )
@@ -346,3 +346,95 @@ def update_powerpoint(req: func.HttpRequest) -> func.HttpResponse:
             status_code=500,
             mimetype="application/json",
         )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def call_excel_agent_init(prompt: str) -> dict:
+    endpoint = "https://taqa-electric-grid.services.ai.azure.com/api/projects/taqa-electric-grid"
+    agent_id = "asst_eiJ8vtDUIJCjjFlcaXOyZKrO"
+    AZURE_FOUNDRY_AGENTS_APIKEY = "8YHvIOstZSLqX7Lb8plm4k2XqLRWQSDWGGJ4ypuQDpZqKyWM74H3JQQJ99BEACHYHv6XJ3w3AAAAACOGYX4y"
+    if not endpoint or not agent_id:
+        raise RuntimeError(
+            "Environment variables AZURE_AI_PROJECT_ENDPOINT and AGENT_ID must be set."
+        )
+
+    client = AIProjectClient(
+        endpoint=endpoint,
+        credential=DefaultAzureCredential(),
+        # api_version="latest"
+    )
+
+    thread = client.agents.threads.create()
+    client.agents.messages.create(thread_id=thread.id, role="user", content=prompt)
+    run = client.agents.runs.create_and_process(thread_id=thread.id, agent_id=agent_id)
+    while run.status in ("queued", "in_progress"):
+        time.sleep(1)
+        run = client.agents.runs.get(thread_id=thread.id, run_id=run.id)
+
+    all_msgs = list(client.agents.messages.list(thread_id=thread.id))
+
+    assistant_msgs = [m for m in all_msgs if m.role == "assistant"]
+
+    if not assistant_msgs:
+        raise RuntimeError("No assistant message found in thread.")
+    last_assistant = assistant_msgs[-1]
+
+    content_obj = last_assistant.content
+    if hasattr(content_obj, "text"):
+        assistant_reply = content_obj.text
+    else:
+        assistant_reply = str(content_obj)
+    return {"response": assistant_reply}
+
+
+
+
+
+@app.route(route="call_excel_agent")
+def call_excel_agent(req: func.HttpRequest) -> func.HttpResponse:
+    url = "https://prod-32.eastus2.logic.azure.com:443/workflows/14f2817faaaf4c87955d8a9a105e1f7c/triggers/When_a_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=SoPqh6rpX3tGJ1Mgsj9IVl--KwbKHbujAA_Wbu13zU8"
+
+
+    payload = {
+        "HTTP_URI": "https://example.com/api/data",
+        "HTTP_request_content": "Sample content sent from Python script."
+    }
+
+
+    headers = {
+        "Content-Type": "application/json"
+    }
+    response = requests.post(url, json=payload, headers=headers)
+    return func.HttpResponse(
+        json.dumps({"response": response}), status_code=200, mimetype="application/json"
+    )
+
+
+
+@app.route(route="call_pptx_agent")
+def call_pptx_agent(req: func.HttpRequest) -> func.HttpResponse:
+    url = "https://prod-08.eastus2.logic.azure.com:443/workflows/372ad925d5d140a9a6bb319c4c10159a/triggers/When_a_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=zBN5wU_2kWGrzUxsMhSyj_8h_S-10HQZT3gCzw9A5Lg"
+
+    payload = {
+        "HTTP_URI": "https://example.com/api/data",
+        "HTTP_request_content": "Sample content sent from Python script."
+    }
+
+    headers = {
+        "Content-Type": "application/json"
+    }
+    response = requests.post(url, json=payload, headers=headers)
+    return func.HttpResponse(
+        json.dumps({"response": response}), status_code=200, mimetype="application/json"
+    )
