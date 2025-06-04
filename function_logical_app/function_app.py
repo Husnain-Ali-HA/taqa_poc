@@ -8,10 +8,13 @@ from dotenv import load_dotenv
 import os
 import time
 from azure.identity import DefaultAzureCredential
-# from azure.core.credentials import AzureKeyCredential
 from azure.ai.projects import AIProjectClient
-
-# Deployment : Jun 2 : 11:29 AM
+from datetime import datetime
+from pptx import Presentation
+from pptx.util import Pt
+from pptx.dml.color import RGBColor
+import ast
+# Deployment : Jun 4 : 9.35 AM
 
 
 from openpyxl import load_workbook, Workbook
@@ -20,6 +23,7 @@ load_dotenv()
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
+
 @app.route(route="health_check")
 def health_check(req: func.HttpRequest) -> func.HttpResponse:
     return func.HttpResponse(
@@ -27,19 +31,14 @@ def health_check(req: func.HttpRequest) -> func.HttpResponse:
     )
 
 
-
 def call_agent(prompt: str) -> dict:
-    # endpoint = os.environ.get("AZURE_FOUNDRY_AGENTS_ENDPOINT")
-    # agent_id = os.environ.get("WORD_FILE_DATA_EXTRRACTOR_AGENT")    
     endpoint = "https://taqa-electric-grid.services.ai.azure.com/api/projects/taqa-electric-grid"
     agent_id = "asst_NbiJUw9yQGRWX1LLMC7dWBdI"
-    AZURE_FOUNDRY_AGENTS_APIKEY="8YHvIOstZSLqX7Lb8plm4k2XqLRWQSDWGGJ4ypuQDpZqKyWM74H3JQQJ99BEACHYHv6XJ3w3AAAAACOGYX4y"
+    AZURE_FOUNDRY_AGENTS_APIKEY = "8YHvIOstZSLqX7Lb8plm4k2XqLRWQSDWGGJ4ypuQDpZqKyWM74H3JQQJ99BEACHYHv6XJ3w3AAAAACOGYX4y"
     if not endpoint or not agent_id:
         raise RuntimeError(
             "Environment variables AZURE_AI_PROJECT_ENDPOINT and AGENT_ID must be set."
         )
-
-    # credential = AzureKeyCredential(AZURE_FOUNDRY_AGENTS_APIKEY)
 
     client = AIProjectClient(
         endpoint=endpoint,
@@ -95,12 +94,13 @@ def save_workbook_to_base64(wb: Workbook) -> str:
     stream.seek(0)
     return base64.b64encode(stream.read()).decode("utf-8")
 
+
 @app.route(route="prcoess_excel_file")
 @app.function_name(name="prcoess_excel_file")
 def prcoess_excel_file(req: func.HttpRequest) -> func.HttpResponse:
     req_body = req.get_json()
     content_b64 = req_body.get("content")
-    file_bytes = base64.b64decode(content_b64)
+    # file_bytes = base64.b64decode(content_b64)
     # output_path = os.path.join(os.getcwd(), "output.xlsx")
 
     # with open(output_path, "wb") as f:
@@ -141,7 +141,6 @@ def prcoess_excel_file(req: func.HttpRequest) -> func.HttpResponse:
 
     new_b64 = save_workbook_to_base64(wb)
 
-
     # Decode the Base64 string into binary Excel content
     excel_data = base64.b64decode(new_b64)
 
@@ -153,390 +152,40 @@ def prcoess_excel_file(req: func.HttpRequest) -> func.HttpResponse:
     )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-from pptx import Presentation
-from pptx.util import Pt
-from pptx.dml.color import RGBColor
-
-
-
-
-
-
-import base64
-import json
-import io
-from pptx import Presentation
-from pptx.util import Pt
-from pptx.dml.color import RGBColor
-import uuid
-import base64
-import json
-import io
-from pptx import Presentation
-import uuid
-from datetime import datetime
-import base64
-import json
-import io
-from pptx import Presentation
-import uuid
-from datetime import datetime
-from pptx.util import Pt
-import base64
-import json
-import io
-from pptx import Presentation
-import uuid
-from datetime import datetime
-from pptx.util import Pt
-from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
-import base64
-import json
-import io
-from pptx import Presentation
-from pptx.util import Pt
-from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
-import uuid
-from datetime import datetime
-
-import base64
-import json
-import io
-from pptx import Presentation
-from pptx.util import Pt
-from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
-import uuid
-from datetime import datetime
-
-import base64
-import json
-import io
-from pptx import Presentation
-from pptx.util import Pt
-from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
-from datetime import datetime
-from pptx import Presentation
-from pptx.util import Pt
-from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
-import base64, io, json
-from datetime import datetime
-from pptx import Presentation
-from pptx.util import Pt
-from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
-import base64, io
-from datetime import datetime
-import base64
-import json
-import io
-from pptx import Presentation
-from pptx.util import Pt
-from pptx.dml.color import RGBColor
-from datetime import datetime
-
-import base64
-import json
-import io
-from pptx import Presentation
-from pptx.util import Pt
-from pptx.dml.color import RGBColor
-from datetime import datetime
-from datetime import datetime as dt
-import io
-import base64
-import json
-from datetime import datetime as dt, datetime
-from pptx import Presentation
-import azure.functions as func
-
-from pptx.dml.color import RGBColor
-from pptx.util import Pt
-
-from pptx.dml.color import RGBColor
-from pptx.util import Pt
-
-# def update_procurement_table(table, date_lists):
-#     # Only these columns are editable (Expected / Actual)
-#     expected_actual_cols = [2,4,6,8,10,12]
-
-#     for row_offset in range(5):  # 5 rows of data (skip 2 header rows)
-#         row = table.rows[row_offset + 2]
-#         for i in range(6):  # Loop through each system
-#             try:
-#                 new_date = date_lists[i][row_offset]
-#                 col_idx = expected_actual_cols[i]  # Only Expected / Actual columns
-#                 cell = row.cells[col_idx]
-
-#                 # Clear previous text
-#                 cell.text = ""
-
-#                 # Add new text with formatting
-#                 paragraph = cell.text_frame.paragraphs[0]
-#                 run = paragraph.add_run()
-#                 run.text = new_date
-
-#                 # Set desired font and color
-#                 font = run.font
-#                 font.name = 'Arial'
-#                 font.size = Pt(11)
-
-#                 # Example: Make all inserted dates red
-#                 font.color.rgb = RGBColor(255, 0, 0)  # RED
-
-#             except IndexError:
-#                 print(f"Missing value at date_lists[{i}][{row_offset}]")
-#             except Exception as e:
-#                 print(f"Error updating cell at row {row_offset+2}, col {col_idx}: {e}")
-
-# from pptx.dml.color import RGBColor
-# from pptx.util import Pt
-# from datetime import datetime
-
-# def parse_date(date_str):
-#     """Parses DD.MM.YYYY string to datetime.date"""
-#     try:
-#         return datetime.strptime(date_str, "%d.%m.%Y").date()
-#     except:
-#         return None
-
-# def update_procurement_table(table, date_lists):
-#     expected_actual_cols = [2,4,6,8,10,12]
-#     plan_cols = [1,3,5,7,9,11]
-
-#     for row_offset in range(5):  # 5 rows of data (skip 2 header rows)
-#         row = table.rows[row_offset + 2]
-#         for i in range(6):  # 6 systems
-#             try:
-#                 col_idx = expected_actual_cols[i]
-#                 plan_idx = plan_cols[i]
-
-#                 actual_date_str = date_lists[i][row_offset]
-#                 actual_date = parse_date(actual_date_str)
-
-#                 plan_cell = row.cells[plan_idx]
-#                 plan_date = parse_date(plan_cell.text.strip())
-
-#                 cell = row.cells[col_idx]
-#                 cell.text = ""
-
-#                 paragraph = cell.text_frame.paragraphs[0]
-#                 run = paragraph.add_run()
-#                 run.text = actual_date_str
-
-#                 font = run.font
-#                 font.name = 'Arial'
-#                 font.size = Pt(11)
-
-#                 # Set color based on comparison
-#                 if actual_date and plan_date:
-#                     if actual_date < plan_date:
-#                         font.color.rgb = RGBColor(0, 128, 0)  # Green
-#                     elif actual_date == plan_date:
-#                         font.color.rgb = RGBColor(0, 0, 255)  # Blue
-#                     else:
-#                         font.color.rgb = RGBColor(255, 0, 0)  # Red
-#                 else:
-#                     font.color.rgb = RGBColor(0, 0, 0)  # Black if dates invalid
-
-#             except Exception as e:
-#                 print(f"Error at row {row_offset+2}, col {col_idx}: {e}")
-# from datetime import datetime
-# from pptx.util import Pt
-# from pptx.dml.color import RGBColor
-
-# def parse_date(date_str):
-#     """Parses DD.MM.YYYY string to datetime.date"""
-#     try:
-#         return datetime.strptime(date_str.strip(), "%d.%m.%Y").date()
-#     except:
-#         return None
-
-# def update_procurement_table(table, date_lists):
-#     expected_actual_cols = [2, 4, 6, 8, 10, 12]
-#     plan_cols = [1, 3, 5, 7, 9, 11]
-
-#     for row_offset in range(5):
-#         row = table.rows[row_offset + 2]
-#         for i in range(6): 
-#             try:
-#                 col_idx = expected_actual_cols[i]
-#                 plan_idx = plan_cols[i]
-
-#                 actual_date_str = date_lists[i][row_offset].strip()
-#                 actual_date = parse_date(actual_date_str)
-
-#                 plan_text = row.cells[plan_idx].text.strip()
-#                 plan_date = parse_date(plan_text)
-
-#                 cell = row.cells[col_idx]
-#                 cell.text = ""
-
-#                 paragraph = cell.text_frame.paragraphs[0]
-#                 run = paragraph.add_run()
-#                 run.text = actual_date_str
-
-#                 font = run.font
-#                 font.name = 'Arial'
-#                 font.size = Pt(11)
-
-#                 # Only assign color if both are real dates
-#                 if actual_date and plan_date:
-#                     if actual_date < plan_date:
-#                         font.color.rgb = RGBColor(0, 128, 0)  # Green
-#                     elif actual_date == plan_date:
-#                         font.color.rgb = RGBColor(0, 0, 255)  # Blue
-#                     else:
-#                         font.color.rgb = RGBColor(255, 0, 0)  # Red
-#                 else:
-#                     font.color.rgb = RGBColor(0, 0, 0)  # Black (default)
-
-#             except Exception as e:
-#                 print(f"Error at row {row_offset + 2}, col {col_idx}: {e}")
-
-# def update_slide_content(slide, date_lists):
-#     for shape in slide.shapes:
-#         if shape.has_table:
-#             update_procurement_table(shape.table, date_lists)
-
-# def process_presentation_base64(content_b64, date_lists):
-#     ppt_bytes = base64.b64decode(content_b64)
-#     prs = Presentation(io.BytesIO(ppt_bytes))
-    
-#     if len(prs.slides) > 2:
-#         update_slide_content(prs.slides[2], date_lists)
-    
-#     output = io.BytesIO()
-#     prs.save(output)
-#     output.seek(0)
-    
-#     filename = f"updated_slide3_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pptx"
-#     with open(filename, "wb") as f:
-#         f.write(output.getvalue())
-    
-#     return {
-#         "status": "success",
-#         "filename": filename,
-#         "content_b64": base64.b64encode(output.getvalue()).decode("utf-8")
-#     }
-
-# @app.route(route="update_powerpoint")
-# @app.function_name(name="update_powerpoint")
-# def update_powerpoint(req: func.HttpRequest) -> func.HttpResponse:
-#     try:
-#         req_body = req.get_json()
-#         content_b64 = req_body.get("content")
-
-#         date_lists = req_body.get("date_lists", [
-#             ["17.11.2023", "14.10.2024", "08.04.2025", "24.06.2025", "15.09.2025"],  # 132kV GIS
-#             ["31.01.2024", "06.06.2024", "15.11.2024", "30.06.2025", "15.09.2025"],  # 33kV GIS
-#             ["15.12.2023", "25.06.2024", "20.11.2024", "15.04.2025", "03.07.2025"],  # Power Transformer
-#             ["24.05.2024", "07.04.2025", "07.06.2025", "26.06.2025", "30.09.2025"],  # 132kV SCMS
-#             ["24.05.2024", "20.01.2025", "11.03.2025", "02.06.2025", "16.06.2025"],  # 110V DC
-#             ["15.04.2024", "14.04.2025", "30.04.2025", "27.05.2025", "07.02.2025"]   # Protection
-#         ])
-#         if len(date_lists) != 6 or any(len(sublist) != 5 for sublist in date_lists):
-#             raise ValueError("date_lists must contain 6 lists with 5 dates each")
-
-#         result = process_presentation_base64(content_b64, date_lists)
-
-#         return func.HttpResponse(
-#             json.dumps({
-#                 "status": "success",
-#                 "filename": result["filename"],
-#                 "updates_applied": {"date_lists": date_lists}
-#             }),
-#             status_code=200,
-#             mimetype="application/json"
-#         )
-
-#     except Exception as e:
-#         return func.HttpResponse(
-#             json.dumps({
-#                 "status": "error",
-#                 "message": str(e),
-#                 "solution": "Ensure date_lists is shaped as 6x5 matrix and contains only date strings"
-#             }),
-#             status_code=500,
-#             mimetype="application/json"
-#         )
-import base64
-import io
-import json
-from datetime import datetime
-from pptx import Presentation
-from pptx.util import Pt
-from pptx.dml.color import RGBColor
-import azure.functions as func
-
 def parse_date(date_str):
     try:
         return datetime.strptime(date_str.strip(), "%d.%m.%Y").date()
     except:
         return None
 
-def update_slide2_table(table, expected_value, awarded_value):
+
+def update_slide2_table(table, expected_value):
     for row in table.rows:
         if len(row.cells) < 2:
             continue
 
         label = row.cells[0].text.strip().lower()
 
-        if "awarded value" in label:
-            row.cells[1].text = awarded_value
-            for paragraph in row.cells[1].text_frame.paragraphs:
-                for run in paragraph.runs:
-                    run.font.name = "Arial"
-                    run.font.size = Pt(12)
+        # if "awarded value" in label:
+        #     row.cells[1].text = awarded_value
+        #     for paragraph in row.cells[1].text_frame.paragraphs:
+        #         for run in paragraph.runs:
+        #             run.font.name = "Arial"
+        #             run.font.size = Pt(16)
 
-        elif "expected completion date" in label:
+        # elif "expected completion date" in label:
+        #     row.cells[1].text = expected_value
+        #     for paragraph in row.cells[1].text_frame.paragraphs:
+        #         for run in paragraph.runs:
+        #             run.font.name = "Arial"
+        #             run.font.size = Pt(16)
+
+        if "expected completion date" in label:
             row.cells[1].text = expected_value
             for paragraph in row.cells[1].text_frame.paragraphs:
                 for run in paragraph.runs:
                     run.font.name = "Arial"
-                    run.font.size = Pt(12)
+                    run.font.size = Pt(16)
 
 
 def update_slide3_table(table, date_lists):
@@ -561,7 +210,7 @@ def update_slide3_table(table, date_lists):
             run.text = actual_date_str
 
             font = run.font
-            font.name = 'Arial'
+            font.name = "Arial"
             font.size = Pt(11)
 
             if actual_date and plan_date:
@@ -574,7 +223,8 @@ def update_slide3_table(table, date_lists):
             else:
                 font.color.rgb = RGBColor(0, 0, 0)
 
-def process_presentation_base64(content_b64, expected_value, awarded_value, date_lists):
+
+def process_presentation_base64(content_b64, expected_value, date_lists):
     ppt_bytes = base64.b64decode(content_b64)
     prs = Presentation(io.BytesIO(ppt_bytes))
 
@@ -583,7 +233,7 @@ def process_presentation_base64(content_b64, expected_value, awarded_value, date
         slide2 = prs.slides[1]
         for shape in slide2.shapes:
             if shape.has_table:
-                update_slide2_table(shape.table, expected_value, awarded_value)
+                update_slide2_table(shape.table, expected_value)
 
         # Slide 3 updates
         slide3 = prs.slides[2]
@@ -595,15 +245,53 @@ def process_presentation_base64(content_b64, expected_value, awarded_value, date
     prs.save(output)
     output.seek(0)
 
-    filename = f"updated_ppt_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pptx"
-    with open(filename, "wb") as f:
-        f.write(output.getvalue())
+    # filename = f"updated_ppt_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pptx"
+    # with open(filename, "wb") as f:
+    #     f.write(output.getvalue())
 
     return {
         "status": "success",
-        "filename": filename,
-        "content_b64": base64.b64encode(output.getvalue()).decode("utf-8")
+        # "filename": filename,
+        "content_b64": base64.b64encode(output.getvalue()).decode("utf-8"),
     }
+
+
+def parse_completion_date_from_response(response_str):
+    match = re.search(r"'value'\s*:\s*'([^']+)'", response_str)
+    if not match:
+        raise ValueError("Completion date not found in the response string.")
+    return match.group(1)
+
+
+Expected_completion_Date = """
+                   Use the tool to retrieve the content. From the content,
+                   extract the value corresponding to "Expected Completion Date".
+                   Return only the date in `YYYY-MM-DD` format. Do not include any explanation, 
+                   label, or extra words in the output. Just output the extracted date.
+                  """
+
+
+Date_Extraction_Prompt = """
+                Call the tool `extractdatafromwordfile_Tool` to extract data from the Word file.
+                The tool returns data in Markdown format as JSON. From this data, locate the table 
+                that contains activity-related information, specifically one with columns for PLAN and Expected / Actual dates.
+
+                From that table, extract only the Expected / Actual date values. Format each column
+                as a list of 5 dates in the format DD.MM.YYYY. Return the final result as a list of 6 lists,
+                where each list represents one column and contains exactly 5 date entries.
+                 
+                **Important**: Your final output must be in the format month values should be int if may convert it into 5 . 
+                and split date with dot  like this 17.11.2023:
+                [
+                ["17.11.2023", "14.10.2024", "08.04.2025", "24.06.2025", "15.09.2025"],
+                ["..."],
+                ...
+                ]
+                **Only return the list of lists. Do not include any explanation, headers, labels, or other content.**
+"""
+
+
+
 
 @app.route(route="update_powerpoint")
 @app.function_name(name="update_powerpoint")
@@ -612,42 +300,49 @@ def update_powerpoint(req: func.HttpRequest) -> func.HttpResponse:
         req_body = req.get_json()
         content_b64 = req_body.get("content")
 
-        expected_value = req_body.get("expected_value", "AED 23000")
-        awarded_value = req_body.get("awarded_value", "AED 23000")
+        expected_value = call_agent(Expected_completion_Date)
+        parsed_response = ast.literal_eval(expected_value["response"])
+        completion_date = parsed_response[0]["text"]["value"]
 
-        date_lists = req_body.get("date_lists", [
-            ["17.11.2023", "14.10.2024", "08.04.2025", "24.06.2025", "15.09.2025"],
-            ["31.01.2024", "06.06.2024", "15.11.2024", "30.06.2025", "15.09.2025"],
-            ["15.12.2023", "25.06.2024", "20.11.2024", "15.04.2025", "03.07.2025"],
-            ["24.05.2024", "07.04.2025", "07.06.2025", "26.06.2025", "30.09.2025"],
-            ["24.05.2024", "20.01.2025", "11.03.2025", "02.06.2025", "16.06.2025"],
-            ["15.04.2024", "14.04.2025", "30.04.2025", "27.05.2025", "07.02.2025"]
-        ])
+        date_list = call_agent(Date_Extraction_Prompt)
+        parsed_date = ast.literal_eval(date_list["response"])
+        date_lists = ast.literal_eval(parsed_date[0]["text"]["value"])
+
+        # expected_value=parse_completion_date_from_response(expected_value)
+        # awarded_value = req_body.get("awarded_value", "AED 23000")
+
+        # date_lists = req_body.get(
+        #     "date_lists",
+        #     [
+        #         ["17.11.2023", "14.10.2024", "08.04.2025", "24.06.2025", "15.09.2025"],
+        #         ["31.01.2024", "06.06.2024", "15.11.2024", "30.06.2025", "15.09.2025"],
+        #         ["15.12.2023", "25.06.2024", "20.11.2024", "15.04.2025", "03.07.2025"],
+        #         ["24.05.2024", "07.04.2025", "07.06.2025", "26.06.2025", "30.09.2025"],
+        #         ["24.05.2024", "20.01.2025", "11.03.2025", "02.06.2025", "16.06.2025"],
+        #         ["15.04.2024", "14.04.2025", "30.04.2025", "27.05.2025", "07.02.2025"],
+        #     ],
+        # )
         if len(date_lists) != 6 or any(len(sublist) != 5 for sublist in date_lists):
             raise ValueError("date_lists must contain 6 lists with 5 dates each")
 
-        result = process_presentation_base64(content_b64, expected_value, awarded_value, date_lists)
+        result = process_presentation_base64(content_b64, completion_date, date_lists)
 
         return func.HttpResponse(
-            json.dumps({
-                "status": "success",
-                "filename": result["filename"],
-                "updates_applied": {
-                    "expected_value": expected_value,
-                    "awarded_value": awarded_value,
-                    "date_lists": date_lists
+            json.dumps(
+                {
+                    # "filename": result["filename"],
+                    "content": result["content_b64"],
+                    # "expected_value":completion_date,
+                    # "date":date_lists
                 }
-            }),
+            ),
             status_code=200,
-            mimetype="application/json"
+            mimetype="application/json",
         )
 
     except Exception as e:
         return func.HttpResponse(
-            json.dumps({
-                "status": "error",
-                "message": str(e)
-            }),
+            json.dumps({"status": "error", "message": str(e)}),
             status_code=500,
-            mimetype="application/json"
+            mimetype="application/json",
         )
