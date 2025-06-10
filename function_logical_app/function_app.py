@@ -438,3 +438,181 @@ def call_pptx_agent(req: func.HttpRequest) -> func.HttpResponse:
     return func.HttpResponse(
         json.dumps({"response": response}), status_code=200, mimetype="application/json"
     )
+
+
+
+
+
+
+
+
+
+
+
+
+def call_foundry_pptx_agent(prompt: str) -> dict:
+    endpoint = "https://taqa-electric-grid.services.ai.azure.com/api/projects/taqa-electric-grid"
+    agent_id = "asst_ysibfgb0IQ1p2ozk07MLAdLB"
+    AZURE_FOUNDRY_AGENTS_APIKEY = "8YHvIOstZSLqX7Lb8plm4k2XqLRWQSDWGGJ4ypuQDpZqKyWM74H3JQQJ99BEACHYHv6XJ3w3AAAAACOGYX4y"
+    
+    if not endpoint or not agent_id:
+        raise RuntimeError(
+            "Environment variables AZURE_AI_PROJECT_ENDPOINT and AGENT_ID must be set."
+        )
+
+    client = AIProjectClient(
+        endpoint=endpoint,
+        credential=DefaultAzureCredential(),
+        # api_version="latest"
+    )
+
+    thread = client.agents.threads.create()
+    client.agents.messages.create(thread_id=thread.id, role="user", content=prompt)
+    run = client.agents.runs.create_and_process(thread_id=thread.id, agent_id=agent_id)
+    while run.status in ("queued", "in_progress"):
+        time.sleep(1)
+        run = client.agents.runs.get(thread_id=thread.id, run_id=run.id)
+
+    all_msgs = list(client.agents.messages.list(thread_id=thread.id))
+
+    assistant_msgs = [m for m in all_msgs if m.role == "assistant"]
+
+    if not assistant_msgs:
+        raise RuntimeError("No assistant message found in thread.")
+    last_assistant = assistant_msgs[-1]
+
+    content_obj = last_assistant.content
+    if hasattr(content_obj, "text"):
+        assistant_reply = content_obj.text
+    else:
+        assistant_reply = str(content_obj)
+    return {"response": assistant_reply}
+
+
+
+
+
+
+
+call_foundry_pptx_agent_prompt="""
+---RULES---
+1. You are NOT allowed to respond with text like:
+ - “I’m ready to process…”
+ - “Please provide input…”
+ - “Awaiting file or URI…”
+ These are invalid. Your response must only include the tool call and its output.
+2. Do not generate summaries, instructions, or explanations.
+3. You must make the tool call before returning anything.
+4. If you don’t have enough information to call the tool, you must still attempt to call it with available defaults or raise an error through the tool call (but DO NOT explain it yourself).
+
+---TOOL FORMAT---
+Tool name: `powerpointprocessing_Tool`
+
+Call structure:
+
+
+
+    """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route(route="call_foundry_pptx_agent")
+def call_foundry_pptx_agent_route(req: func.HttpRequest) -> func.HttpResponse:
+    
+    # req_body = req.get_json()
+    call_foundry_pptx_agent(call_foundry_pptx_agent_prompt)
+    
+    return func.HttpResponse(
+        json.dumps({"response": "foundry agent run successfuly for powerpoint"}), status_code=200, mimetype="application/json"
+    )
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+def call_foundry_excel_agent(prompt: str) -> dict:
+    endpoint = "https://taqa-electric-grid.services.ai.azure.com/api/projects/taqa-electric-grid"
+    agent_id = "asst_eiJ8vtDUIJCjjFlcaXOyZKrO"
+    AZURE_FOUNDRY_AGENTS_APIKEY = "8YHvIOstZSLqX7Lb8plm4k2XqLRWQSDWGGJ4ypuQDpZqKyWM74H3JQQJ99BEACHYHv6XJ3w3AAAAACOGYX4y"
+    
+    if not endpoint or not agent_id:
+        raise RuntimeError(
+            "Environment variables AZURE_AI_PROJECT_ENDPOINT and AGENT_ID must be set."
+        )
+
+    client = AIProjectClient(
+        endpoint=endpoint,
+        credential=DefaultAzureCredential(),
+        # api_version="latest"
+    )
+
+    thread = client.agents.threads.create()
+    client.agents.messages.create(thread_id=thread.id, role="user", content=prompt)
+    run = client.agents.runs.create_and_process(thread_id=thread.id, agent_id=agent_id)
+    while run.status in ("queued", "in_progress"):
+        time.sleep(1)
+        run = client.agents.runs.get(thread_id=thread.id, run_id=run.id)
+
+    all_msgs = list(client.agents.messages.list(thread_id=thread.id))
+
+    assistant_msgs = [m for m in all_msgs if m.role == "assistant"]
+
+    if not assistant_msgs:
+        raise RuntimeError("No assistant message found in thread.")
+    last_assistant = assistant_msgs[-1]
+
+    content_obj = last_assistant.content
+    if hasattr(content_obj, "text"):
+        assistant_reply = content_obj.text
+    else:
+        assistant_reply = str(content_obj)
+    return {"response": assistant_reply}
+
+
+
+
+
+
+
+call_foundry_excel_agent_prompt="""
+You are an expert Excel-writing AI agent. Your task is to always call the tool `writedataintoexcel_Tool` with the appropriate parameters and return **only the tool's output**. You are not allowed to respond with anything else.
+
+---OBJECTIVE---
+- Always call `writedataintoexcel_Tool` to perform write operations into an Excel file.
+- After calling the tool, return its exact output without adding any explanation or formatting.
+- If the tool returns nothing or an empty string, respond exactly with:
+    """
+
+
+
+@app.route(route="call_foundry_excel_agent")
+def call_foundry_excel_agent_route_1(req: func.HttpRequest) -> func.HttpResponse:
+    
+    # req_body = req.get_json()
+    call_foundry_excel_agent(call_foundry_excel_agent_prompt)
+    
+    return func.HttpResponse(
+        json.dumps({"response": "foundry agent run successfuly for Excel"}), status_code=200, mimetype="application/json"
+    )
