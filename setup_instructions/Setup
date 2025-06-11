@@ -1,4 +1,0 @@
-crete an App Registrations 
-      crete an a client secret in Certifcations & Secrets
-      in Api permission add an Delegation Permission with no admin consnet  for Microsoft Graph :Sites.ReadWrite.All
-
