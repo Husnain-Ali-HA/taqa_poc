@@ -14,12 +14,30 @@ headers = {"Content-Type": "application/json"}
 
 # UI
 
-st.set_page_config(
-    page_title="Taqa Electric Grid Reports",
-    page_icon="📄",
-    layout="centered",
-    initial_sidebar_state="auto",
-    menu_items={"Get Help": None, "Report a Bug": None, "About": None},
+# st.set_page_config(
+#     page_title="Taqa Electric Grid Reports",
+#     page_icon="📄",
+#     layout="centered",
+#     initial_sidebar_state="auto",
+#     menu_items={"Get Help": None, "Report a Bug": None, "About": None},
+# )
+st.set_page_config(page_title="Taqa Electric Grid Reports",page_icon="📄",, menu_items={'Get Help': None, 'About': None})
+st.markdown(
+    """
+    <style>
+        /* Hide the Streamlit menu */
+        #MainMenu {visibility: hidden; display: none;} 
+        
+        /* Hide the footer */
+        footer {visibility: hidden; display: none;} 
+        
+        /* Hide the header (contains the GitHub icon in some cases) */
+        header {visibility: hidden; display: none;}
+
+        .css-1kyxreq {visibility: hidden; display: none;} /* Manage App icon */
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 
