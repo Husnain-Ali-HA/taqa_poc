@@ -21,7 +21,7 @@ headers = {"Content-Type": "application/json"}
 #     initial_sidebar_state="auto",
 #     menu_items={"Get Help": None, "Report a Bug": None, "About": None},
 # )
-st.set_page_config(page_title="Taqa Electric Grid Reports",page_icon="📄",, menu_items={'Get Help': None, 'About': None})
+st.set_page_config(page_title="Taqa Electric Grid Reports",page_icon="📄", menu_items={'Get Help': None, 'About': None})
 st.markdown(
     """
     <style>
